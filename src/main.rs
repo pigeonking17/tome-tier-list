@@ -38,7 +38,7 @@ fn main() {
         let selector_odd = Selector::parse("tr.odd").unwrap();
         let selector_even = Selector::parse("tr.even").unwrap();
 
-        let elements = document.select(&selector_odd).chain(document.select(&selector_even)).collect();
+        let elements: Vec<scraper::ElementRef> = document.select(&selector_odd).chain(document.select(&selector_even)).collect();
     }
 
     if elements[0].inner_html().as_str() == "<td colspan=\"3\">No characters available.</td> " {
