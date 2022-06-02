@@ -5,9 +5,9 @@ use scraper::{Html, Selector};
 fn main() {
     let mut page_num = 0;
 
-    let url = format!("https://te4.org/characters-vault?tag_name=&tag_level_min=&tag_level_max=&tag_winner=winner&tag_difficulty[]=36&tag_class[]=34&tag_game[]=699172&page=9");
+    let url = format!("https://te4.org/characters-vault?tag_name=&tag_level_min=&tag_level_max=&tag_winner=winner&tag_difficulty[]=36&tag_class[]=34&tag_game[]=699172&page=0");
 
-    let mut resp = reqwest::blocking::get(url).unwrap();
+    let resp = reqwest::blocking::get(url).unwrap();
     assert!(resp.status().is_success());
 
     let body = resp.text().unwrap();
@@ -21,7 +21,7 @@ fn main() {
     while &elements[0].inner_html() != "<td colspan=\"3\">No characters available.</td> " {
         println!("Doing page no. {}", page_num);
 
-        for element in elements {
+        for element in &elements {
             println!("{}", element.inner_html());
         }
 
@@ -29,7 +29,7 @@ fn main() {
 
         let url = format!("https://te4.org/characters-vault?tag_name=&tag_level_min=&tag_level_max=&tag_winner=winner&tag_difficulty[]=36&tag_class[]=34&tag_game[]=699172&page={}", page_num);
 
-        let mut resp = reqwest::blocking::get(url).unwrap();
+        let resp = reqwest::blocking::get(url).unwrap();
         assert!(resp.status().is_success());
 
         let body = resp.text().unwrap();
@@ -38,7 +38,7 @@ fn main() {
         let selector_odd = Selector::parse("tr.odd").unwrap();
         let selector_even = Selector::parse("tr.even").unwrap();
 
-        let elements: Vec<scraper::ElementRef> = document.select(&selector_odd).chain(document.select(&selector_even)).collect();
+        elements = document.select(&selector_odd).chain(document.select(&selector_even)).collect();
     }
 
     if elements[0].inner_html().as_str() == "<td colspan=\"3\">No characters available.</td> " {
