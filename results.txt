@@ -1,0 +1,39 @@
+Class              |Wins |Deaths |Percentage |Tier
+-------------------+-----+-------+-----------+-----
+Oozemancer         |113  |1054   |10.72%     |S
+Necromancer        |152  |1652   |9.20%      |S
+Paradox mage       |40   |529    |7.56%      |S
+Annihilator        |67   |1232   |5.44%      |A
+Temporal warden    |78   |1447   |5.39%      |A
+Skirmisher         |63   |1178   |5.35%      |A
+Solipsist          |67   |1300   |5.15%      |A
+Adventurer         |148  |3179   |4.66%      |B
+Psyshot            |51   |1113   |4.58%      |B
+Doomed             |80   |1751   |4.57%      |B
+Archmage           |198  |4341   |4.56%      |B
+Summoner           |30   |725    |4.14%      |B
+Mindslayer         |57   |1393   |4.09%      |B
+Bulwark            |40   |1076   |3.72%      |C
+Sawbutcher         |49   |1338   |3.66%      |C
+Gunslinger         |32   |934    |3.43%      |C
+Stone warden       |19   |578    |3.29%      |C
+Alchemist          |21   |710    |2.96%      |D
+Anorithil          |41   |1430   |2.87%      |D
+Archer             |45   |1601   |2.81%      |D
+Shadowblade        |54   |1947   |2.77%      |D
+Brawler            |46   |1845   |2.49%      |D
+Wyrmic             |40   |1638   |2.44%      |D
+Cultist of entropy |42   |1743   |2.41%      |D
+Arcane blade       |64   |2710   |2.36%      |D
+Reaver             |32   |1437   |2.23%      |D
+Corruptor          |32   |1452   |2.20%      |D
+Possessor          |20   |956    |2.09%      |D
+Marauder           |30   |1475   |2.03%      |D
+Cursed             |64   |3031   |2.11%      |D
+Berserker          |36   |1816   |1.98%      |E
+Writhing one       |33   |1767   |1.87%      |E
+Demonologist       |28   |1526   |1.83%      |E
+Doombringer        |42   |2329   |1.80%      |E
+Rogue              |43   |2764   |1.55%      |E
+Sun paladin        |65   |4652   |1.40%      |E
+Wanderer           |68   |11784  |0.57%      |LOL

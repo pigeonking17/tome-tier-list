@@ -3,35 +3,11 @@ use scraper::{Html, Selector};
 use rayon::prelude::*;
 
 #[derive(Debug)]
-struct ClassTable {
-    classes: Vec<Class>,
-}
-
-#[derive(Debug)]
 struct Class {
     class: String,
     wins: i32,
     deaths: i32,
     win_percent: f64,
-}
-
-impl ClassTable {
-    fn new() -> Self {
-        ClassTable {
-            classes: Vec::new(),
-        }
-    }
-
-    fn push(&mut self, class: Class) {
-        self.classes.push(class);
-    }
-
-    fn display(&self) {
-        println!("Class              | Wins   | Deaths   | Percentage");
-        for class in &self.classes {
-            println!("{:19}|{:8}|{:10}|{:15.2}%", class.class, class.wins, class.deaths, class.win_percent);
-        }
-    }
 }
 
 impl Class {
@@ -51,25 +27,15 @@ impl Class {
 }
 
 fn main() {
-    let classes = vec![/*"adventurer", "alchemist", "annihilator", "anorithil", "arcane blade", "archer", "archmage",*/ "berserker",
-                   "brawler", "bulwark", "corruptor", "cultist of entropy", "cursed", "demonologist", "doombringer", "doomed",
-                   /*"gunslinger", "marauder", "mindslayer", "necromancer", "oozemancer", "paradox mage", "possessor", "psyshot",
-                   "reaver", "rogue", "sawbutcher", "shadowblade", "skirmisher", "solipsist", "stone warden",*/ "summoner",
-                   "sun paladin", "temporal warden", "wanderer", "wyrmic"];
-
-//    let mut class_table = ClassTable::new();
+    let classes = vec!["adventurer", "alchemist", "annihilator", "anorithil", "arcane blade", "archer", "archmage", "berserker",
+                       "brawler", "bulwark", "corruptor", "cultist of entropy", "cursed", "demonologist", "doombringer", "doomed",
+                       "gunslinger", "marauder", "mindslayer", "necromancer", "oozemancer", "paradox mage", "possessor", "psyshot",
+                       "reaver", "rogue", "sawbutcher", "shadowblade", "skirmisher", "solipsist", "stone warden", "summoner",
+                       "sun paladin", "temporal warden", "wanderer", "wyrmic", "writhing one"];
 
     println!("Class           | Wins  | Deaths  | Percentage");
 
     classes.par_iter().for_each(|x| get_class_stats(x).display());
-
-//    for class in classes {
-//        let class_stats = get_class_stats(class);
-//
-//        class_table.push(class_stats);
-//    }
-
-//    class_table.display();
 }
 
 fn get_class_stats(class: &str) -> Class {
